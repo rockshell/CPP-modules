@@ -3,18 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arch <arch@student.42.fr>                  +#+  +:+       +#+         #
+#    By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/20 11:37:18 by arch              #+#    #+#              #
-#    Updated: 2024/12/20 12:10:01 by arch             ###   ########.fr        #
+#    Updated: 2024/12/23 19:35:54 by akulikov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror
-EXTRA = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -I include
+EXTRA = -Wall -Wextra -Werror -I include -std=c++98
 
-SRC = megaphone.cpp
+SRC = main.cpp /
+	Contact.cpp /
+	PhoneBook.cpp
 OBJ = $(SRC:.cpp=.o)
 TEST_OBJ = $(SRC:.cpp=.test.o)
 

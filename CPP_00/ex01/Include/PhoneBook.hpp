@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:43:38 by akulikov          #+#    #+#             */
-/*   Updated: 2024/12/23 13:40:34 by arch             ###   ########.fr       */
+/*   Updated: 2024/12/23 20:23:40 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
-#include "contact.hpp"
+#include "Contact.hpp"
 
 class	PhoneBook{
 	public:
-		int	Size;
-		Contact FirstContact;
-		Contact	LastContact;
+		int	addContact(std::string &FirstName, std::string &LastName, 
+				std::string &Nickname, std::string &PhoneNumber, 
+				std::string &DarkestSecret);
 
-		int	AddContact(std::string FirstName, std::string LastName, 
-			std::string Nickname, std::string PhoneNumber, 
-			std::string DarkestSecret);
-
-		Contact SearchForContact(int Index);
-		
+		const Contact &searchForContact(int Index) const;
+	private:
+		int	_phoneBookSize;
+		Contact _contacts[8];
 };
