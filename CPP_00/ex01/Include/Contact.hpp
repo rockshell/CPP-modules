@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:44:20 by akulikov          #+#    #+#             */
-/*   Updated: 2024/12/23 19:59:07 by akulikov         ###   ########.fr       */
+/*   Updated: 2024/12/24 11:37:26 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@ class Contact{
 		void SetPhoneNumber (const std::string &Input);
 		void SetDarkestSecret (const std::string &Input);
 
-
-		const std::string& GetFirstName() const;
-		const std::string& GetLastName() const;
-		const std::string& GetNickname() const;
-		const std::string& GetPhoneNumber() const;
+		const std::string &GetFirstName() const;
+		const std::string &GetLastName() const;
+		const std::string &GetNickname() const;
+		const std::string &GetPhoneNumber() const;
 	private:
 		std::string _firstName;
 		std::string _lastName;

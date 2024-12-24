@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 19:05:15 by akulikov          #+#    #+#             */
-/*   Updated: 2024/12/23 19:59:11 by akulikov         ###   ########.fr       */
+/*   Updated: 2024/12/24 11:07:51 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,18 @@ void Contact::SetDarkestSecret (const std::string &Input) {
 	_darkestSecret = Input;	
 }
 
-const std::string& Contact::GetFirstName() {
+const std::string &Contact::GetFirstName() const {
 	return (_firstName);
 }
 
-const std::string& Contact::GetLastName() {
+const std::string &Contact::GetLastName() const {
 	return (_lastName);
 }
 
-const std::string& Contact::GetNickname() {
+const std::string &Contact::GetNickname() const {
 	return (_nickname);
 }
 
-const std::string& Contact::GetPhoneNumber() {
+const std::string &Contact::GetPhoneNumber() const {
 	return (_phoneNumber);
 }
