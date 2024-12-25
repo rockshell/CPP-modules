@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:44:20 by akulikov          #+#    #+#             */
-/*   Updated: 2024/12/25 12:16:12 by arch             ###   ########.fr       */
+/*   Updated: 2024/12/25 12:39:03 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Contact{
 		void SetNickname (const std::string &Input);
 		void SetPhoneNumber (const std::string &Input);
 		void SetDarkestSecret (const std::string &Input);
-
+		
 		const std::string &GetFirstName() const;
 		const std::string &GetLastName() const;
 		const std::string &GetNickname() const;
