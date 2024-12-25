@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 19:05:15 by akulikov          #+#    #+#             */
-/*   Updated: 2024/12/24 11:07:51 by arch             ###   ########.fr       */
+/*   Updated: 2024/12/25 12:16:27 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,8 @@ const std::string &Contact::GetNickname() const {
 
 const std::string &Contact::GetPhoneNumber() const {
 	return (_phoneNumber);
+}
+
+const std::string &Contact::GetSecret() const {
+	return (_darkestSecret);
 }

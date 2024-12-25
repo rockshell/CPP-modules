@@ -6,10 +6,11 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 17:12:32 by akulikov          #+#    #+#             */
-/*   Updated: 2024/12/24 19:11:12 by arch             ###   ########.fr       */
+/*   Updated: 2024/12/25 12:30:31 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdlib>
 #include <iomanip>
 #include <iostream>
 #include <string>
@@ -72,7 +73,6 @@ void	print_contact_in_row(int index, Contact *currentContact)
 	cut(&lastName);
 	cut(&nickName);
 
-
 	std::cout << "|";
 	std::cout << std::setw(10) << std::right << index << "|";
 	std::cout << std::setw(10) << std::right << firstName << "|";
@@ -81,9 +81,19 @@ void	print_contact_in_row(int index, Contact *currentContact)
 	std::cout << "\n";
 }
 
+void	print_contact_details(int index, Contact *currentContact)
+{
+	std::cout << "INDEX: " << index << "\n";
+	std::cout << "FIRSTNAME: " << currentContact->GetFirstName() << "\n";
+	std::cout << "LASTNAME: " << currentContact->GetLastName() << "\n";
+	std::cout << "NICKNAME: " << currentContact->GetNickname() << "\n";
+	std::cout << "PHONENUMBER: " << currentContact->GetPhoneNumber() << "\n";
+	std::cout << "[CLASSIFIED]: " << currentContact->GetSecret() << "\n";
+}
+
 void	search_for_contact(PhoneBook *Book)
 {
-	int	i;
+	std::string	input;
 	int size = Book->getSize();
 	Contact	current_contact;
 	print_header();
@@ -93,7 +103,17 @@ void	search_for_contact(PhoneBook *Book)
 			print_contact_in_row(i, &current_contact);
 	}
 	std::cout << "Enter the index:\n";
-	std::cin >> i;
+	std::cin >> input;
+	if (input.length() == 1 && std::isdigit(input[0]))
+	{
+		int i = input[0] - '0';
+		if (i > Book->getSize() || Book->searchForContact(i, &current_contact) == 1)
+			std::cout << "No such index exists\n";
+		else
+			print_contact_details(i, &current_contact);	
+	}
+	else
+		std::cout << "Wrong index\n";
 }
 
 int	main()

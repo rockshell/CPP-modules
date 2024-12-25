@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:44:20 by akulikov          #+#    #+#             */
-/*   Updated: 2024/12/24 11:37:26 by arch             ###   ########.fr       */
+/*   Updated: 2024/12/25 12:16:12 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Contact{
 		const std::string &GetLastName() const;
 		const std::string &GetNickname() const;
 		const std::string &GetPhoneNumber() const;
+		const std::string &GetSecret() const;
 	private:
 		std::string _firstName;
 		std::string _lastName;
