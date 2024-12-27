@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 17:05:57 by akulikov          #+#    #+#             */
-/*   Updated: 2024/12/26 17:08:23 by akulikov         ###   ########.fr       */
+/*   Updated: 2024/12/27 12:56:06 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ const std::string& Weapon::getType() const {
 	return(_type);	
 }
 
-void Weapon::setType(std::string name) {
-	_type = name;
+void Weapon::setType(std::string type) {
+	_type = type;
 }

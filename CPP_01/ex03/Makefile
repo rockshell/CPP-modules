@@ -6,7 +6,7 @@
 #    By: arch <arch@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/20 11:37:18 by arch              #+#    #+#              #
-#    Updated: 2024/12/26 14:44:01 by arch             ###   ########.fr        #
+#    Updated: 2024/12/27 13:26:11 by arch             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC = main.cpp \
 OBJ = $(SRC:.cpp=.o)
 TEST_OBJ = $(SRC:.cpp=.test.o)
 
-NAME = zombie
+NAME = buhurt
 
 all: $(NAME)
 
