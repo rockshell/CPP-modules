@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 17:12:32 by akulikov          #+#    #+#             */
-/*   Updated: 2024/12/25 12:30:31 by arch             ###   ########.fr       */
+/*   Updated: 2024/12/27 20:43:26 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ void	add_contact(PhoneBook *Book)
 	std::string InputDarkestSecret;
 	std::cout << "Don't use spaces, other breaking characters or bad words. Please be nice.\n";
 	std::cout << "Enter the first name:\n";
-	std::cin >> InputFirstName;
+	std::getline(std::cin, InputFirstName);
 	std::cout << "Enter the last name:\n";
-	std::cin >> InputLastName;
+	std::getline(std::cin, InputLastName);
 	std::cout << "Enter the nickname:\n";
-	std::cin >> InputNickname;
+	std::getline(std::cin, InputNickname);
 	std::cout << "Enter the phonenumber:\n";
-	std::cin >> InputPhoneNumber;
+	std::getline(std::cin, InputPhoneNumber);
 	std::cout << "Enter the darkest secret:\n";
-	std::cin >> InputDarkestSecret;
+	std::getline(std::cin, InputDarkestSecret);
 	i = Book->addContact(InputFirstName, 
 						InputLastName, 
 						InputNickname,
@@ -103,11 +103,11 @@ void	search_for_contact(PhoneBook *Book)
 			print_contact_in_row(i, &current_contact);
 	}
 	std::cout << "Enter the index:\n";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	if (input.length() == 1 && std::isdigit(input[0]))
 	{
 		int i = input[0] - '0';
-		if (i > Book->getSize() || Book->searchForContact(i, &current_contact) == 1)
+		if (i >= Book->getSize() || Book->searchForContact(i, &current_contact) == 1)
 			std::cout << "No such index exists\n";
 		else
 			print_contact_details(i, &current_contact);	
@@ -120,10 +120,13 @@ int	main()
 {
 	std::string Input;
 	PhoneBook CurrentPhoneBook;
-	while (1)
+	while (true)
 	{
 		std::cout << "Type the command:\n";
-		std::cin >> Input;
+		if (!std::getline(std::cin, Input)) {
+			std::cout << "EOF reached or an error occurred." << std::endl;
+			break;
+		}
 		if (Input == "ADD")
 			add_contact(&CurrentPhoneBook);
 		else if (Input == "SEARCH")
@@ -131,7 +134,7 @@ int	main()
 		else if (Input == "EXIT")
 			break;
 		else
-			std::cout << "Wrong command, please try again\n";
+			std::cout << "Wrong command, please try again" << std::endl;
 	}
 	std::cout << "Goodbye\n";
 	exit (0);
