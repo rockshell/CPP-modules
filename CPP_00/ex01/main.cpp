@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 17:12:32 by akulikov          #+#    #+#             */
-/*   Updated: 2024/12/27 20:43:26 by akulikov         ###   ########.fr       */
+/*   Updated: 2025/01/02 14:08:14 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,24 @@
 #include <string>
 #include "PhoneBook.hpp"
 
-void	add_contact(PhoneBook *Book)
-{
+std::string	add_field_in_contact() {
+	std::string Input;
+	while (true)
+	{
+		if (!std::getline(std::cin, Input)) {
+			std::cout << "EOF reached or an error occurred." << std::endl;
+			exit (1);
+		}
+		else if (Input.empty()) {
+			std::cout << "Field can't be empty." << std::endl;
+		}
+		else 
+			break;
+	}
+	return (Input);
+}
+
+void	add_contact(PhoneBook *Book) {
 	int	i;
 	std::string InputFirstName;
 	std::string InputLastName;
@@ -26,15 +42,15 @@ void	add_contact(PhoneBook *Book)
 	std::string InputDarkestSecret;
 	std::cout << "Don't use spaces, other breaking characters or bad words. Please be nice.\n";
 	std::cout << "Enter the first name:\n";
-	std::getline(std::cin, InputFirstName);
+	InputFirstName = add_field_in_contact();
 	std::cout << "Enter the last name:\n";
-	std::getline(std::cin, InputLastName);
+	InputLastName = add_field_in_contact();
 	std::cout << "Enter the nickname:\n";
-	std::getline(std::cin, InputNickname);
+	InputNickname = add_field_in_contact();
 	std::cout << "Enter the phonenumber:\n";
-	std::getline(std::cin, InputPhoneNumber);
+	InputPhoneNumber = add_field_in_contact();
 	std::cout << "Enter the darkest secret:\n";
-	std::getline(std::cin, InputDarkestSecret);
+	InputDarkestSecret = add_field_in_contact();
 	i = Book->addContact(InputFirstName, 
 						InputLastName, 
 						InputNickname,
@@ -43,8 +59,7 @@ void	add_contact(PhoneBook *Book)
 	std::cout << "Added contact, index is: " << i << "\n";
 }
 
-void	print_header()
-{
+void	print_header() {
 	std::cout << "---------------------------------------------\n";
 	std::cout << "|";
 	std::cout << std::setw(10) << std::right << "INDEX" << "|";
@@ -54,8 +69,7 @@ void	print_header()
 	std::cout << "---------------------------------------------\n";
 }
 
-void cut(std::string *Input)
-{
+void cut(std::string *Input) {
 	if (Input->length() > 9)
 	{
 		Input->resize(9);
@@ -63,8 +77,7 @@ void cut(std::string *Input)
 	}
 }
 
-void	print_contact_in_row(int index, Contact *currentContact)
-{
+void	print_contact_in_row(int index, Contact *currentContact) {
 	std::string firstName = currentContact->GetFirstName();
 	std::string lastName = currentContact->GetLastName();
 	std::string nickName = currentContact->GetNickname();
@@ -81,8 +94,7 @@ void	print_contact_in_row(int index, Contact *currentContact)
 	std::cout << "\n";
 }
 
-void	print_contact_details(int index, Contact *currentContact)
-{
+void	print_contact_details(int index, Contact *currentContact) {
 	std::cout << "INDEX: " << index << "\n";
 	std::cout << "FIRSTNAME: " << currentContact->GetFirstName() << "\n";
 	std::cout << "LASTNAME: " << currentContact->GetLastName() << "\n";
@@ -91,8 +103,7 @@ void	print_contact_details(int index, Contact *currentContact)
 	std::cout << "[CLASSIFIED]: " << currentContact->GetSecret() << "\n";
 }
 
-void	search_for_contact(PhoneBook *Book)
-{
+void	search_for_contact(PhoneBook *Book) {
 	std::string	input;
 	int size = Book->getSize();
 	Contact	current_contact;
@@ -116,8 +127,7 @@ void	search_for_contact(PhoneBook *Book)
 		std::cout << "Wrong index\n";
 }
 
-int	main()
-{
+int	main() {
 	std::string Input;
 	PhoneBook CurrentPhoneBook;
 	while (true)
@@ -125,7 +135,7 @@ int	main()
 		std::cout << "Type the command:\n";
 		if (!std::getline(std::cin, Input)) {
 			std::cout << "EOF reached or an error occurred." << std::endl;
-			break;
+			exit (1);
 		}
 		if (Input == "ADD")
 			add_contact(&CurrentPhoneBook);

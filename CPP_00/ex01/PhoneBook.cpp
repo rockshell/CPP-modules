@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:28:27 by arch              #+#    #+#             */
-/*   Updated: 2024/12/24 17:22:11 by arch             ###   ########.fr       */
+/*   Updated: 2025/01/02 13:45:31 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 int	PhoneBook::addContact(std::string FirstName, std::string LastName, 
 				std::string Nickname, std::string PhoneNumber, 
-				std::string DarkestSecret)
-{
+				std::string DarkestSecret) {
 	int	i;
 	Contact NewContact;
 	NewContact.SetFirstName(FirstName);
@@ -40,15 +39,13 @@ int	PhoneBook::addContact(std::string FirstName, std::string LastName,
 	return (i);
 }
 
-int PhoneBook::searchForContact(int Index, Contact *outContact) const
-{
+int PhoneBook::searchForContact(int Index, Contact *outContact) const {
 	if (Index < 0 || Index > 7 || Index > _phoneBookSize)
 		return (1);
 	*outContact = _contacts[Index];
 	return(0);
 }
 
-int PhoneBook::getSize() const
-{
+int PhoneBook::getSize() const {
 	return (_phoneBookSize);
 }
