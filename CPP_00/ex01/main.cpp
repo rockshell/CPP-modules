@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 17:12:32 by akulikov          #+#    #+#             */
-/*   Updated: 2025/01/02 14:08:14 by arch             ###   ########.fr       */
+/*   Updated: 2025/02/05 12:59:27 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,29 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <cctype>
 #include "PhoneBook.hpp"
 
-std::string	add_field_in_contact() {
+bool is_string_blank(std::string Input) {
+	if(Input.find_first_not_of(' ') != std::string::npos)
+		return (1);
+	return (0);
+}
+
+std::string	add_field_in_contact(std::string Instructions) {
 	std::string Input;
 	while (true)
 	{
+		std::cout << Instructions << std::endl;
 		if (!std::getline(std::cin, Input)) {
 			std::cout << "EOF reached or an error occurred." << std::endl;
 			exit (1);
 		}
 		else if (Input.empty()) {
 			std::cout << "Field can't be empty." << std::endl;
+		}
+		else if (is_string_blank(Input) == 0) {
+			std::cout << "Field can't be blank." << std::endl;
 		}
 		else 
 			break;
@@ -41,16 +52,11 @@ void	add_contact(PhoneBook *Book) {
 	std::string InputPhoneNumber;
 	std::string InputDarkestSecret;
 	std::cout << "Don't use spaces, other breaking characters or bad words. Please be nice.\n";
-	std::cout << "Enter the first name:\n";
-	InputFirstName = add_field_in_contact();
-	std::cout << "Enter the last name:\n";
-	InputLastName = add_field_in_contact();
-	std::cout << "Enter the nickname:\n";
-	InputNickname = add_field_in_contact();
-	std::cout << "Enter the phonenumber:\n";
-	InputPhoneNumber = add_field_in_contact();
-	std::cout << "Enter the darkest secret:\n";
-	InputDarkestSecret = add_field_in_contact();
+	InputFirstName = add_field_in_contact("Enter the first name");
+	InputLastName = add_field_in_contact("Enter the last name");
+	InputNickname = add_field_in_contact("Enter the nickname");
+	InputPhoneNumber = add_field_in_contact("Enter the phonenumber");
+	InputDarkestSecret = add_field_in_contact("Enter the darkest secret");
 	i = Book->addContact(InputFirstName, 
 						InputLastName, 
 						InputNickname,
@@ -68,6 +74,8 @@ void	print_header() {
 	std::cout << std::setw(10) << std::right << "NICKNAME" << "|" << "\n";
 	std::cout << "---------------------------------------------\n";
 }
+
+
 
 void cut(std::string *Input) {
 	if (Input->length() > 9)
