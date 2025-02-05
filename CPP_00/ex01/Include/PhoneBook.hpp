@@ -3,12 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:43:38 by akulikov          #+#    #+#             */
-/*   Updated: 2024/12/24 17:17:48 by arch             ###   ########.fr       */
+/*   Updated: 2025/02/05 13:55:49 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
 #include <string>
 #include "Contact.hpp"
@@ -33,3 +36,5 @@ class	PhoneBook{
 		int	_oldestContact;
 		Contact _contacts[8];
 };
+
+#endif
