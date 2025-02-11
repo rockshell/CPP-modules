@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 14:00:50 by arch              #+#    #+#             */
-/*   Updated: 2024/12/25 15:47:33 by arch             ###   ########.fr       */
+/*   Updated: 2025/02/06 15:33:57 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <string>
 #include <iostream>
 #include "Zombie.hpp"
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arch <arch@student.42.fr>                  +#+  +:+       +#+         #
+#    By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/20 11:37:18 by arch              #+#    #+#              #
-#    Updated: 2024/12/26 13:58:25 by arch             ###   ########.fr        #
+#    Updated: 2025/02/06 15:54:37 by akulikov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 TEST_OBJ = $(SRC:.cpp=.test.o)
 
-NAME = ex02
+NAME = brains
 
 all: $(NAME)
 
