@@ -16,7 +16,7 @@
 #include <string>
 #include "Contact.hpp"
 
-class	PhoneBook{
+class	PhoneBook {
 	public:
 		PhoneBook() {
 			_phoneBookSize = 0;

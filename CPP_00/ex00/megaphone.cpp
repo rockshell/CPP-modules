@@ -14,24 +14,16 @@
 #include <string>
 #include <cctype>
 
-void	megaphone(std::string input)
-{
+void	megaphone(std::string input) {
 	for(std::size_t i = 0; i < input.size(); i++)
-	{
-		unsigned char uc = static_cast<unsigned char>(input[i]);
-		if (std::islower(uc))
-			input[i] = static_cast<char>(std::toupper(uc));
-	}
+		input[i] = static_cast<char>(std::toupper(input[i]));
 	std::cout << input;
 }
 
-int main(int argc, char **argv)
-{
-	int	i = 0;
+int main(int argc, char **argv) {
 	if (argc > 1)
 	{
-		while (++i < argc)
-		{
+		for(int i = 1; i < argc; i++) {
 			megaphone(argv[i]);
 			if (i + 1 < argc)
 				std::cout << ' ';

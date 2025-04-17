@@ -10,12 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cctype>
 #include <cstdlib>
 #include <iomanip>
 #include <iostream>
 #include <string>
-#include <cctype>
 #include "PhoneBook.hpp"
+
+void	print_contact_details(int index, Contact *currentContact) {
+	std::cout << "INDEX: " << index << "\n";
+	std::cout << "FIRSTNAME: " << currentContact->GetFirstName() << "\n";
+	std::cout << "LASTNAME: " << currentContact->GetLastName() << "\n";
+	std::cout << "NICKNAME: " << currentContact->GetNickname() << "\n";
+	std::cout << "PHONENUMBER: " << currentContact->GetPhoneNumber() << "\n";
+	std::cout << "[CLASSIFIED]: " << currentContact->GetSecret() << "\n";
+}
+
+void	print_header() {
+	std::cout << "---------------------------------------------\n";
+	std::cout << "|";
+	std::cout << std::setw(10) << std::right << "INDEX" << "|";
+	std::cout << std::setw(10) << std::right << "FIRSTNAME" << "|";
+	std::cout << std::setw(10) << std::right << "LASTNAME" << "|";
+	std::cout << std::setw(10) << std::right << "NICKNAME" << "|" << "\n";
+	std::cout << "---------------------------------------------\n";
+}
 
 bool is_string_blank(std::string Input) {
 	if(Input.find_first_not_of(' ') != std::string::npos)
@@ -65,19 +84,7 @@ void	add_contact(PhoneBook *Book) {
 	std::cout << "Added contact, index is: " << i << "\n";
 }
 
-void	print_header() {
-	std::cout << "---------------------------------------------\n";
-	std::cout << "|";
-	std::cout << std::setw(10) << std::right << "INDEX" << "|";
-	std::cout << std::setw(10) << std::right << "FIRSTNAME" << "|";
-	std::cout << std::setw(10) << std::right << "LASTNAME" << "|";
-	std::cout << std::setw(10) << std::right << "NICKNAME" << "|" << "\n";
-	std::cout << "---------------------------------------------\n";
-}
-
-
-
-void cut(std::string *Input) {
+void cut_length_of_input(std::string *Input) {
 	if (Input->length() > 9)
 	{
 		Input->resize(9);
@@ -90,9 +97,9 @@ void	print_contact_in_row(int index, Contact *currentContact) {
 	std::string lastName = currentContact->GetLastName();
 	std::string nickName = currentContact->GetNickname();
 
-	cut(&firstName);
-	cut(&lastName);
-	cut(&nickName);
+	cut_length_of_input(&firstName);
+	cut_length_of_input(&lastName);
+	cut_length_of_input(&nickName);
 
 	std::cout << "|";
 	std::cout << std::setw(10) << std::right << index << "|";
@@ -100,15 +107,6 @@ void	print_contact_in_row(int index, Contact *currentContact) {
 	std::cout << std::setw(10) << std::right << lastName << "|";
 	std::cout << std::setw(10) << std::right << nickName << "|";
 	std::cout << "\n";
-}
-
-void	print_contact_details(int index, Contact *currentContact) {
-	std::cout << "INDEX: " << index << "\n";
-	std::cout << "FIRSTNAME: " << currentContact->GetFirstName() << "\n";
-	std::cout << "LASTNAME: " << currentContact->GetLastName() << "\n";
-	std::cout << "NICKNAME: " << currentContact->GetNickname() << "\n";
-	std::cout << "PHONENUMBER: " << currentContact->GetPhoneNumber() << "\n";
-	std::cout << "[CLASSIFIED]: " << currentContact->GetSecret() << "\n";
 }
 
 void	search_for_contact(PhoneBook *Book) {
