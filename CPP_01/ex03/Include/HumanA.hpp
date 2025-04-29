@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:46:51 by arch              #+#    #+#             */
-/*   Updated: 2024/12/27 13:18:01 by arch             ###   ########.fr       */
+/*   Updated: 2025/04/29 16:02:40 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 class HumanA
 {
 	public:
-		HumanA(std::string name, Weapon& weapon);
-	
+		HumanA(std::string name, Weapon &weapon);
+
 		void attack(void);
 	
 	private:
 		std::string _name;
-		Weapon&	_weapon;
+		Weapon &_weapon;
 };
 
 #endif

@@ -6,13 +6,20 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 20:03:19 by arch              #+#    #+#             */
-/*   Updated: 2025/01/04 11:33:04 by arch             ###   ########.fr       */
+/*   Updated: 2025/04/29 17:37:37 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
-#include <string>
 #include <iostream>
+#include "Harl.hpp"
+
+Harl::Harl(void) {
+	std::cout << "We have a Harl now" << std::endl;	
+}
+
+Harl::~Harl(void) {
+	std::cout << "We have a Harl no more" << std::endl;	
+}
 
 void Harl::debug(void) {
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
