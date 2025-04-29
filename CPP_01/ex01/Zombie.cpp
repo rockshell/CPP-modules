@@ -10,11 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Zombie.hpp"
 
+Zombie::Zombie(void) {
+	this->_name = "(nukk)";
+}
+	
+Zombie::~Zombie() {
+	std::cout << _name << " have met his demise..." << std::endl;
+}
+
 void Zombie::announce(void) {
-	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
+	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void Zombie::setName(std::string name) {

@@ -13,7 +13,11 @@
 #include <string>
 #include "Weapon.hpp"
 
-const std::string& Weapon::getType() const {
+Weapon::Weapon(std::string type) {
+	Weapon::_type = type;
+}
+
+const std::string Weapon::getType() const {
 	return(_type);	
 }
 

@@ -11,8 +11,16 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 #include "Zombie.hpp"
 
+Zombie::Zombie(std::string name) {
+	Zombie::_name = name;
+}
+
+Zombie::~Zombie() {
+	std::cout << _name << " have met his demise..." << std::endl;
+}
 void Zombie::announce(void) {
-	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
+	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
