@@ -6,17 +6,19 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:30:03 by akulikov          #+#    #+#             */
-/*   Updated: 2025/04/30 13:17:36 by arch             ###   ########.fr       */
+/*   Updated: 2025/04/30 13:40:52 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-#include <iostream>
-
 Fixed::Fixed(void) {
 	_number = 0;
 	std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int value) {
+	
 }
 
 Fixed::Fixed(const Fixed& src) {

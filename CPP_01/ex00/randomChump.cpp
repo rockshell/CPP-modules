@@ -6,11 +6,10 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 14:10:14 by arch              #+#    #+#             */
-/*   Updated: 2024/12/25 14:37:14 by arch             ###   ########.fr       */
+/*   Updated: 2025/04/30 13:49:25 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include "Zombie.hpp"
 
 void	randomChump(std::string name) {

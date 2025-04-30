@@ -6,11 +6,10 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:22:29 by arch              #+#    #+#             */
-/*   Updated: 2025/04/29 16:02:04 by arch             ###   ########.fr       */
+/*   Updated: 2025/04/30 13:51:18 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "HumanA.hpp"
 
 HumanA::HumanA(std::string name, Weapon &weapon): _name(name), _weapon(weapon) {

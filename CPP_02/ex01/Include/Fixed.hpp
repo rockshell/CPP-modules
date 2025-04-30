@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/25 14:00:50 by arch              #+#    #+#             */
-/*   Updated: 2025/04/30 13:50:17 by arch             ###   ########.fr       */
+/*   Created: 2025/02/05 15:29:24 by akulikov          #+#    #+#             */
+/*   Updated: 2025/04/30 13:40:31 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-Zombie::Zombie(void) {
-	this->_name = "(nukk)";
-}
-	
-Zombie::~Zombie(void) {
-	std::cout << _name << " have met his demise..." << std::endl;
-}
+#include <iostream>
+#include <cmath>
 
-void Zombie::announce(void) {
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+class Fixed {
+	public:
+		Fixed(void);
+		Fixed(const int value);
+		Fixed(const Fixed& src);
+		Fixed& operator= (const Fixed &src);
+		~Fixed(void);
+		
+		int	getRawBits()const;
+		void setRawBits(int const raw);
+	private:
+		int _number;
+		static const int _bits = 8;
+};
 
-void Zombie::setName(std::string name) {
-	_name = name;
-}
+#endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 13:52:52 by arch              #+#    #+#             */
-/*   Updated: 2025/02/05 13:55:55 by akulikov         ###   ########.fr       */
+/*   Updated: 2025/04/30 13:48:30 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Zombie{
 	public:
 		Zombie (std::string name);
-		~Zombie ();
+		~Zombie (void);
 
 		void announce(void);
 

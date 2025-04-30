@@ -6,11 +6,10 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:22:27 by arch              #+#    #+#             */
-/*   Updated: 2025/04/29 16:03:43 by arch             ###   ########.fr       */
+/*   Updated: 2025/04/30 13:51:25 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "HumanB.hpp"
 
 HumanB::HumanB(std::string name) {
