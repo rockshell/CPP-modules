@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 12:02:50 by arch              #+#    #+#             */
-/*   Updated: 2025/04/30 13:51:34 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/01 19:57:56 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define HUMANB_HPP
 
 #include <iostream>
+#include <string>
 #include "Weapon.hpp"
 
 class HumanB
@@ -23,10 +24,11 @@ class HumanB
 		
 		void attack(void);
 		void setWeapon(Weapon& weapon);
+		void setWeapon(void*);
 	
 	private:
 		std::string _name;
-		Weapon* _weapon;
+		Weapon *_weapon;
 };
 
 #endif

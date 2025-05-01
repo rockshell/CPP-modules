@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:46:51 by arch              #+#    #+#             */
-/*   Updated: 2025/04/30 13:51:38 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/01 18:42:44 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define HUMANA_HPP
 
 #include <iostream>
+#include <string>
 #include "Weapon.hpp"
 
 class HumanA

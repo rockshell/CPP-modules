@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:53:27 by akulikov          #+#    #+#             */
-/*   Updated: 2024/12/27 12:06:57 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/01 19:46:16 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class Weapon {
 	public:
+		Weapon();
 		Weapon(std::string type);
 
 		const std::string getType() const;
