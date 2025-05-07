@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 18:23:31 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/07 15:02:47 by akulikov         ###   ########.fr       */
+/*   Created: 2025/05/07 14:33:03 by akulikov          #+#    #+#             */
+/*   Updated: 2025/05/07 14:40:59 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int	main(void) {
-	ScavTrap Alpha("Alpha");
-	ClapTrap Beta("Beta");
+#include <string>
+#include "ClapTrap.hpp"
 
-	Alpha.attack("Beta");
-	Alpha.guardGate();
-	Alpha.beRepaired(10);
+class FragTrap: public ClapTrap {
+	public:
+		FragTrap (void);
+		FragTrap (std::string name);
+		FragTrap (const FragTrap& src);
+		FragTrap& operator= (const FragTrap& src); 
+		~FragTrap (void);
 
-	Beta.attack("nobody");
-	return (0);
-}
+		void highFivesGuys(void);
+};
+
+#endif

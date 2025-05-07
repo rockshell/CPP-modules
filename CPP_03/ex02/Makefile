@@ -6,7 +6,7 @@
 #    By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/20 11:37:18 by arch              #+#    #+#              #
-#    Updated: 2025/05/07 14:17:25 by akulikov         ###   ########.fr        #
+#    Updated: 2025/05/07 14:32:13 by akulikov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,12 @@ EXTRA = -Wall -Wextra -Werror -I Include -std=c++98
 
 SRC = src/main.cpp \
 	src/ClapTrap.cpp \
-	src/ScavTrap.cpp
+	src/ScavTrap.cpp \
+	src/FragTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 TEST_OBJ = $(SRC:.cpp=.test.o)
 
-NAME = scavtrap
+NAME = fragtrap
 
 all: $(NAME)
 

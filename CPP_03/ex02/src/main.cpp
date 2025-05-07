@@ -6,20 +6,18 @@
 /*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:23:31 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/07 15:02:47 by akulikov         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:02:26 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void) {
-	ScavTrap Alpha("Alpha");
-	ClapTrap Beta("Beta");
+	FragTrap Alpha("Alpha");
 
 	Alpha.attack("Beta");
-	Alpha.guardGate();
 	Alpha.beRepaired(10);
+	Alpha.highFivesGuys();
 
-	Beta.attack("nobody");
 	return (0);
 }

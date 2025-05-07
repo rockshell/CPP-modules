@@ -6,7 +6,7 @@
 /*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:23:34 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/05 13:41:16 by akulikov         ###   ########.fr       */
+/*   Updated: 2025/05/07 12:56:09 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class ClapTrap {
 	public:
+		ClapTrap (void);
 		ClapTrap (std::string name);
 		ClapTrap (const ClapTrap& src);
 		ClapTrap& operator= (const ClapTrap& src);

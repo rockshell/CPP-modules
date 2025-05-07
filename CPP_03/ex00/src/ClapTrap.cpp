@@ -6,7 +6,7 @@
 /*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:23:28 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/05 18:40:46 by akulikov         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:20:59 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@
 
 #include <iostream>
 
+ClapTrap::ClapTrap (void) {
+	_name = "Stock-standard";
+	_hp = 10;
+	_ep = 10;
+	_damage = 0;
+	std::cout << "ClapTrap " << _name << " was activated" << std::endl;
+}
+
 ClapTrap::ClapTrap (std::string name) {
 	_name = name;
 	_hp = 10;
 	_ep = 10;
 	_damage = 0;
-	std::cout << "ClapTrap " << _name << " is activated" << std::endl;
+	std::cout << "ClapTrap " << _name << " was activated" << std::endl;
 }
 
 ClapTrap::ClapTrap (const ClapTrap& src) {
@@ -65,7 +73,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	else {
 		_hp += amount;
 		_ep -= 1;
-		std::cout << "ClapTrap " << _name << " has taken " << amount << " damage!" << std::endl;
+		std::cout << "ClapTrap " << _name << " regained " << amount << " hit-points!" << std::endl;
 		std::cout << "Current hit-points: " << _hp << std::endl;
 		std::cout << "Current energy: " << _ep << std::endl;
 	}
