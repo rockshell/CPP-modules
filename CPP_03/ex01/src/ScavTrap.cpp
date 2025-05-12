@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:12:03 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/07 14:27:51 by akulikov         ###   ########.fr       */
+/*   Updated: 2025/05/12 17:25:33 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap (void) {
+ScavTrap::ScavTrap (void): ClapTrap() {
 	_name = "Scavdard";
 	_hp = 100;
 	_ep = 50;
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap (void) {
 	std::cout << "ScavTrap " << _name << " is activated" << std::endl;
 }
 
-ScavTrap::ScavTrap (std::string name) {
+ScavTrap::ScavTrap (std::string name): ClapTrap(name) {
 	_name = name;
 	_hp = 100;
 	_ep = 50;
@@ -29,7 +29,7 @@ ScavTrap::ScavTrap (std::string name) {
 	std::cout << "ScavTrap " << _name << " is activated" << std::endl;
 }
 
-ScavTrap::ScavTrap (const ScavTrap& src) {
+ScavTrap::ScavTrap (const ScavTrap& src): ClapTrap(src) {
 	this->_name = src._name;
 	this->_hp = src._hp;
 	this->_ep = src._ep;

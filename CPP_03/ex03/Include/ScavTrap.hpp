@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 18:23:31 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/12 18:34:38 by arch             ###   ########.fr       */
+/*   Created: 2025/05/05 19:01:33 by akulikov          #+#    #+#             */
+/*   Updated: 2025/05/12 17:40:34 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int	main(void) {
-	FragTrap Alpha("Alpha");
-	FragTrap New;
-	FragTrap Mighty(Alpha);
+#include <string>
+#include "ClapTrap.hpp"
 
-	Alpha.attack("Beta");
-	Alpha.beRepaired(10);
-	Alpha.highFivesGuys();
-	New.attack("Someone");
-	Mighty.highFivesGuys();
+class ScavTrap: virtual public ClapTrap {
+	public:
+		ScavTrap (void);
+		ScavTrap (std::string name);
+		ScavTrap (const ScavTrap& src);
+		ScavTrap& operator= (const ScavTrap& src); 
+		~ScavTrap (void);
 
-	return (0);
-}
+		void guardGate(void);
+		void attack(const std::string& target);
+};
+
+#endif

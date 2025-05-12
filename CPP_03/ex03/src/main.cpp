@@ -6,22 +6,21 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:23:31 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/12 18:34:38 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/12 18:33:03 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void) {
-	FragTrap Alpha("Alpha");
-	FragTrap New;
-	FragTrap Mighty(Alpha);
+	DiamondTrap a;
+	DiamondTrap b("Giga Chadd");
+	DiamondTrap c(a);
 
-	Alpha.attack("Beta");
-	Alpha.beRepaired(10);
-	Alpha.highFivesGuys();
-	New.attack("Someone");
-	Mighty.highFivesGuys();
-
+	a.whoAmI();
+	a.attack("some super random dude");
+	b.whoAmI();
+	b.attack("Chadd-clone");
+	c.whoAmI();
 	return (0);
 }
