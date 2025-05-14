@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:22:27 by arch              #+#    #+#             */
-/*   Updated: 2025/05/01 20:00:05 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/14 12:35:05 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 HumanB::HumanB(std::string name) {
 	HumanB::_name = name;
+	HumanB::_weapon = NULL;
 }
 
 void HumanB::attack(void) {
