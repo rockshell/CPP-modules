@@ -13,13 +13,22 @@
 #include "ScavTrap.hpp"
 
 int	main(void) {
+	ScavTrap Noname;
 	ScavTrap Alpha("Alpha");
+	ScavTrap Impostor(Alpha);
+	ScavTrap Sleepy = Noname;
 	ClapTrap Beta("Beta");
 
 	Alpha.attack("Beta");
 	Alpha.guardGate();
 	Alpha.beRepaired(10);
 
-	Beta.attack("nobody");
+	Noname.attack("nobody");
+	Noname.takeDamage(5);
+	Noname.beRepaired(5);
+
+	Impostor.guardGate();
+	Sleepy.attack("Beta");
+	Beta.attack("Scavdard");
 	return (0);
 }

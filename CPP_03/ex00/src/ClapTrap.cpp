@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-
 #include <iostream>
+#include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap (void) {
 	_name = "Stock-standard";

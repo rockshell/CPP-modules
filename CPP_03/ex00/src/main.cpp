@@ -13,10 +13,12 @@
 #include "ClapTrap.hpp"
 
 int	main(void) {
+	ClapTrap Noname;
 	ClapTrap Alpha("Alpha");
-	ClapTrap Beta(Alpha);
+	ClapTrap Beta(Noname);
 	ClapTrap Gamma = Alpha;
 
+	Noname.takeDamage(5);
 	Alpha.attack("Beta");
 	Alpha.beRepaired(20);
 	Alpha.takeDamage(10);
