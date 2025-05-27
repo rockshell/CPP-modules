@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:30:03 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/03 18:35:05 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/16 17:48:52 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+//Constructos-destructors
 Fixed::Fixed(void) {
 	std::cout << "Default constructor called" << std::endl;
 	_number = 0;
@@ -43,7 +44,8 @@ Fixed::~Fixed(void) {
 	std::cout << "Destructor called" << std::endl;
 }
 
-float	Fixed::toFloat(void)const {
+//Operations
+float Fixed::toFloat(void)const {
 	return ((float)_number / (float)(1 << _bits));
 }
 
@@ -51,6 +53,7 @@ int	Fixed::toInt(void)const {
 	return (_number >> _bits);
 }
 
+//Getter-setters
 int	Fixed::getRawBits(void)const {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_number);
@@ -61,7 +64,8 @@ void Fixed::setRawBits(int const raw) {
 	this->_number = raw;
 }
 
-std::ostream	&operator<<(std::ostream &output, Fixed const &fixed) {
+//Misc
+std::ostream &operator<<(std::ostream &output, Fixed const &fixed) {
 	output << fixed.toFloat();
 	return (output);
 }

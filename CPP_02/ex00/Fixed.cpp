@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:30:03 by akulikov          #+#    #+#             */
-/*   Updated: 2025/04/30 13:17:36 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/16 16:07:48 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed(void) {
 
 Fixed::Fixed(const Fixed& src) {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = src;
+	this->_number = src.getRawBits();
 }
 
 Fixed &Fixed::operator=(const Fixed &src) {

@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:30:03 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/13 10:43:09 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/16 19:13:29 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+//Constructor-destructor
 Fixed::Fixed(void) {
 	std::cout << "Default constructor called" << std::endl;
 	_number = 0;
@@ -43,6 +44,7 @@ Fixed::~Fixed(void) {
 	std::cout << "Destructor called" << std::endl;
 }
 
+//Operations
 float	Fixed::toFloat(void)const {
 	return ((float)_number / (float)(1 << _bits));
 }
@@ -66,6 +68,7 @@ std::ostream &operator<<(std::ostream &output, Fixed const &fixed) {
 	return (output);
 }
 
+//Compare operators
 bool Fixed::operator> (Fixed fixed) {
 	return (this->toFloat() > fixed.toFloat());
 }
@@ -90,22 +93,24 @@ bool Fixed::operator!= (Fixed fixed) {
 	return (this->toFloat() != fixed.toFloat());
 }
 
-float Fixed::operator+ (Fixed fixed) {
-	return (this->toFloat() + fixed.toFloat());
+//Math operators
+Fixed Fixed::operator+ (Fixed fixed) {
+	return Fixed(this->toFloat() + fixed.toFloat());
 }
 
-float Fixed::operator- (Fixed fixed) {
-	return (this->toFloat() - fixed.toFloat());
+Fixed Fixed::operator- (Fixed fixed) {
+	return Fixed(this->toFloat() - fixed.toFloat());
 }
 
-float Fixed::operator* (Fixed fixed) {
-	return (this->toFloat() * fixed.toFloat());
+Fixed Fixed::operator* (Fixed fixed) {
+	return Fixed(this->toFloat() * fixed.toFloat());
 }
 
-float Fixed::operator/ (Fixed fixed) {
-	return (this->toFloat() / fixed.toFloat());
+Fixed Fixed::operator/ (Fixed fixed) {
+	return Fixed(this->toFloat() / fixed.toFloat());
 }
 
+//Pre-post increments-decrements
 Fixed Fixed::operator++ () {
 	this->_number++;
 	return (*this);
@@ -128,7 +133,8 @@ Fixed Fixed::operator-- (int) {
 	return (tmp);
 }
 
-Fixed	&Fixed::min(Fixed &first, Fixed &second) {
+//Min-max comparisons
+Fixed &Fixed::min(Fixed &first, Fixed &second) {
 	if (first.toFloat() <= second.toFloat())
 		return (first);
 	else
@@ -142,7 +148,7 @@ const Fixed	&Fixed::min(const Fixed &first, const Fixed &second) {
 		return (second);
 }
 
-Fixed	&Fixed::max(Fixed &first, Fixed &second) {
+Fixed &Fixed::max(Fixed &first, Fixed &second) {
 	if (first.toFloat() >= second.toFloat())
 		return (first);
 	else

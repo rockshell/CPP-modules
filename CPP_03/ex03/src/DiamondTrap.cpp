@@ -3,33 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 18:01:38 by arch              #+#    #+#             */
-/*   Updated: 2025/05/12 18:31:20 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/27 19:44:08 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap (void): ClapTrap ("Default_clap_name") {
+DiamondTrap::DiamondTrap (void): 
+	ClapTrap ("clap_name") {
 	_name = "Default Diamond";
-	this->_hp = FragTrap::_hp;
-	this->_ep = ScavTrap::_ep;
-	this->_damage = FragTrap::_damage;
+	// _hp = FragTrap::_hp;
+	// _ep = ScavTrap::_ep;
+	// _damage = FragTrap::_damage;
 	std::cout << "DiamondTrap " << _name << " is locked" << std::endl;
+	std::cout << "HP: " << _hp << ". Should be 100" << std::endl;
+	std::cout << "EP: " << _ep << ". Should be 50" << std::endl;
+	std::cout << "DAMAGE: " << _damage << ". Should be 30" << std::endl;
 }
 
-DiamondTrap::DiamondTrap (std::string name): ClapTrap (name + "_clap_name") {
+DiamondTrap::DiamondTrap (std::string name): 
+	ClapTrap (name + "clap_name") {
 	_name = name;
-	this->_hp = FragTrap::_hp;
-	this->_ep = ScavTrap::_ep;
-	this->_damage = FragTrap::_damage;
+	// _hp = FragTrap::_hp;
+	// _ep = ScavTrap::_ep;
+	// _damage = FragTrap::_damage;
 	std::cout << "DiamondTrap " << _name << " is locked" << std::endl;
+	std::cout << "HP: " << this->_hp << ". Should be 100" << std::endl;
+	std::cout << "EP: " << this->_ep << ". Should be 50" << std::endl;
+	std::cout << "DAMAGE: " << this->_damage << ". Should be 30" << std::endl; 
 }
 
-DiamondTrap::DiamondTrap (const DiamondTrap& src): ClapTrap (src), FragTrap (src), ScavTrap (src)  {
+DiamondTrap::DiamondTrap (const DiamondTrap& src): ClapTrap (src), ScavTrap (src), FragTrap (src) {
 	this->_name = src._name;
 	this->_hp = src._hp;
 	this->_ep = src._ep;

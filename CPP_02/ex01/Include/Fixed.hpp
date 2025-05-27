@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:29:24 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/03 18:35:56 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/16 17:48:47 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class Fixed {
 		Fixed& operator= (const Fixed &src);
 		~Fixed(void);
 		
-		int	getRawBits()const;
-		int	toInt(void)const;
-		void setRawBits(int const raw);
 		float toFloat(void)const;
+		int	toInt(void)const;
+		int	getRawBits()const;
+		void setRawBits(int const raw);
 	
 	private:
 		int _number;
