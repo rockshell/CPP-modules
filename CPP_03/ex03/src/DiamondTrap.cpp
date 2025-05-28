@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 18:01:38 by arch              #+#    #+#             */
-/*   Updated: 2025/05/27 19:44:08 by akulikov         ###   ########.fr       */
+/*   Updated: 2025/05/28 16:10:28 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 DiamondTrap::DiamondTrap (void): 
 	ClapTrap ("clap_name") {
 	_name = "Default Diamond";
-	// _hp = FragTrap::_hp;
-	// _ep = ScavTrap::_ep;
-	// _damage = FragTrap::_damage;
+	_hp = FragTrap::_frag_hp;
+	_ep = ScavTrap::_scav_ep;
+	_damage = FragTrap::_frag_dmg;
 	std::cout << "DiamondTrap " << _name << " is locked" << std::endl;
 	std::cout << "HP: " << _hp << ". Should be 100" << std::endl;
 	std::cout << "EP: " << _ep << ". Should be 50" << std::endl;
@@ -28,9 +28,9 @@ DiamondTrap::DiamondTrap (void):
 DiamondTrap::DiamondTrap (std::string name): 
 	ClapTrap (name + "clap_name") {
 	_name = name;
-	// _hp = FragTrap::_hp;
-	// _ep = ScavTrap::_ep;
-	// _damage = FragTrap::_damage;
+	_hp = FragTrap::_frag_hp;
+	_ep = ScavTrap::_scav_ep;
+	_damage = FragTrap::_frag_dmg;
 	std::cout << "DiamondTrap " << _name << " is locked" << std::endl;
 	std::cout << "HP: " << this->_hp << ". Should be 100" << std::endl;
 	std::cout << "EP: " << this->_ep << ". Should be 50" << std::endl;

@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 19:01:33 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/28 16:04:34 by arch             ###   ########.fr       */
+/*   Created: 2025/05/20 16:34:29 by arch              #+#    #+#             */
+/*   Updated: 2025/05/20 18:16:26 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#pragma once
 
 #include <string>
-#include "ClapTrap.hpp"
+#include <iostream>
+#include "Animal.hpp"
 
-class ScavTrap: virtual protected ClapTrap {
+class Cat: public Animal {
 	public:
-		ScavTrap (void);
-		ScavTrap (std::string name);
-		ScavTrap (const ScavTrap& src);
-		ScavTrap& operator= (const ScavTrap& src); 
-		~ScavTrap (void);
-
-		void guardGate(void);
-		void attack(const std::string& target);
-	
-	protected:
-		int	_scav_hp;
-		int _scav_ep;
-		int _scav_dmg;
+		Cat (void);
+		Cat (const Cat& src);
+		Cat& operator= (const Cat& src);
+		~Cat (void);
+		
+		void makeSound(void);
 };
-
-#endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 14:33:03 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/27 19:34:15 by akulikov         ###   ########.fr       */
+/*   Updated: 2025/05/28 16:05:19 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string>
 #include "ClapTrap.hpp"
 
-class FragTrap: virtual public ClapTrap {
+class FragTrap: virtual protected ClapTrap {
 	public:
 		FragTrap (void);
 		FragTrap (std::string name);
@@ -25,6 +25,11 @@ class FragTrap: virtual public ClapTrap {
 		~FragTrap (void);
 
 		void highFivesGuys(void);
+		
+	protected:
+		int	_frag_hp;
+		int _frag_ep;
+		int _frag_dmg;
 };
 
 #endif

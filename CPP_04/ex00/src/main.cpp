@@ -5,33 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/26 15:01:28 by arch              #+#    #+#             */
-/*   Updated: 2025/05/15 03:03:27 by arch             ###   ########.fr       */
+/*   Created: 2025/05/20 18:13:22 by arch              #+#    #+#             */
+/*   Updated: 2025/05/20 18:19:49 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 int main() {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.attack();
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-		jim.setWeapon(NULL);
-		jim.attack();
-	}
+	const Animal* meta = new Animal();
+	const Animal* i = new Cat();
+	const Animal* j = new Dog();
+	std::cout << i->getType() << " " << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	i->makeSound();
+	j->makeSound();
+	meta->makeSound();
 	return (0);
 }

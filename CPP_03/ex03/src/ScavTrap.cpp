@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:12:03 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/27 19:34:23 by akulikov         ###   ########.fr       */
+/*   Updated: 2025/05/28 16:09:22 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,34 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap (void): ClapTrap() {
-	_name = "Scavdard";
-	_hp = 100;
-	_ep = 50;
-	_damage = 20;
+	this->_name = "Scavdard";
+	this->_scav_hp = 100;
+	this->_scav_ep = 50;
+	this->_scav_dmg = 20;
 	std::cout << "ScavTrap " << _name << " is activated" << std::endl;
 }
 
 ScavTrap::ScavTrap (std::string name): ClapTrap(name) {
-	_name = name;
-	_hp = 100;
-	_ep = 50;
-	_damage = 20;
+	this->_name = name;
+	this->_scav_hp = 100;
+	this->_scav_ep = 50;
+	this->_scav_dmg = 20;
 	std::cout << "ScavTrap " << _name << " is activated" << std::endl;
 }
 
 ScavTrap::ScavTrap (const ScavTrap& src): ClapTrap(src) {
 	this->_name = src._name;
-	this->_hp = src._hp;
-	this->_ep = src._ep;
-	this->_damage = src._damage;
+	this->_scav_hp = src._hp;
+	this->_scav_ep = src._ep;
+	this->_scav_dmg = src._damage;
 	std::cout << "ScavTrap " << this->_name << " was copy-constructed" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator= (const ScavTrap& src) {
 	this->_name = src._name;
-	this->_hp = src._hp;
-	this->_ep = src._ep;
-	this->_damage = src._damage;
+	this->_scav_hp = src._hp;
+	this->_scav_ep = src._ep;
+	this->_scav_dmg = src._damage;
 	std::cout << "ScavTrap " << this->_name << " was copy-assigned" << std::endl;
 	return (*this);
 }
