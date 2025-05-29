@@ -6,13 +6,14 @@
 /*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:23:34 by akulikov          #+#    #+#             */
-/*   Updated: 2025/05/27 19:26:39 by akulikov         ###   ########.fr       */
+/*   Updated: 2025/05/29 15:10:03 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
+#include <iostream>
 #include <string>
 
 class ClapTrap {

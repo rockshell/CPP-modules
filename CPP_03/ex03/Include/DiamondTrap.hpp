@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 17:31:56 by arch              #+#    #+#             */
-/*   Updated: 2025/05/28 16:03:12 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/29 15:13:09 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIAMONDTRAP_HPP
 #define DIAMONDTRAP_HPP
 
+#include <iostream>
 #include <string>
+
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class DiamondTrap: protected ScavTrap, protected FragTrap {
+class DiamondTrap: public ScavTrap, public FragTrap {
 	public:
 		DiamondTrap (void);
 		DiamondTrap (std::string name);
