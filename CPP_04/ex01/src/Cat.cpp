@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 17:40:15 by arch              #+#    #+#             */
-/*   Updated: 2025/05/30 17:31:45 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/30 18:31:30 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 Cat::Cat (void) {
 	this->_type = "Cat";
+	this->_brain = new Brain();
 	std::cout << "Cat constructed" << std::endl;
 }
 
 Cat::Cat (const Cat& src): Animal() {
 	this->_type = src._type;
+	this->_brain = src._brain;
 	std::cout << "Cat copy-constructed" << std::endl;
 }
 

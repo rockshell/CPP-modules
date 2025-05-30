@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:13:22 by arch              #+#    #+#             */
-/*   Updated: 2025/05/30 17:51:28 by arch             ###   ########.fr       */
+/*   Updated: 2025/05/30 17:58:58 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "WrongCat.hpp"
 
 void	testingAnimalClass() {
-	std::cout << "====================\n Animal class testing step\n====================" << std::endl;
+	std::cout << "====================\nAnimal class testing step\n====================" << std::endl;
 	const Animal* meta = new Animal();
 	std::cout << "Meta should produce some generic animal sounds" << std::endl;
 	meta->makeSound();
@@ -24,7 +24,7 @@ void	testingAnimalClass() {
 };
 
 void	testingCatClass() {
-	std::cout << "====================\n Cat class testing step\n====================" << std::endl;
+	std::cout << "====================\nCat class testing step\n====================" << std::endl;
 	const Animal* cat = new Cat();
 	std::cout << "Cat should produce an cat's sound" << std::endl;
 	cat->makeSound();
@@ -34,7 +34,7 @@ void	testingCatClass() {
 };
 
 void	testingDogClass() {
-	std::cout << "====================\n Dog class testing step\n====================" << std::endl;
+	std::cout << "====================\nDog class testing step\n====================" << std::endl;
 	const Animal* dog = new Dog();
 	std::cout << "Dog should produce an dog's sound" << std::endl;
 	dog->makeSound();
@@ -44,7 +44,7 @@ void	testingDogClass() {
 };
 
 void	testingWrongCat() {
-	std::cout << "====================\n Wrong Cat class testing step\n====================" << std::endl;
+	std::cout << "====================\nWrong Cat class testing step\n====================" << std::endl;
 	const WrongAnimal* cococat = new WrongCat();
 	std::cout << "This cat should produce very strange noise" << std::endl;
 	cococat->makeSound();
@@ -59,5 +59,6 @@ int main() {
 	testingCatClass();
 	testingDogClass();
 	testingWrongCat();
+	std::cout << "====================\nEnd of tests\n====================" << std::endl;
 	return (0);
 }

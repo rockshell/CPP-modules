@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 17:41:08 by arch              #+#    #+#             */
-/*   Updated: 2025/05/30 17:45:23 by arch             ###   ########.fr       */
+/*   Created: 2025/05/30 18:05:51 by arch              #+#    #+#             */
+/*   Updated: 2025/05/30 18:10:19 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,12 @@
 #include <iostream>
 #include <string>
 
-class WrongAnimal {
+class Brain {
 	public:
-		WrongAnimal (void);
-		WrongAnimal (const WrongAnimal& src);
-		WrongAnimal& operator= (const WrongAnimal& src);
-		virtual ~WrongAnimal (void);
+		Brain ();
+		Brain (const Brain& src);
+		Brain& operator= (const Brain& src);
+		~Brain ();
 
-		std::string getType(void)const;
-		void makeSound(void)const;
-		
-	protected:
-		std::string _type;
+		std::string ideas[100];
 };

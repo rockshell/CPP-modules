@@ -6,7 +6,7 @@
 #    By: arch <arch@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/20 11:37:18 by arch              #+#    #+#              #
-#    Updated: 2025/05/30 17:49:39 by arch             ###   ########.fr        #
+#    Updated: 2025/05/30 18:23:00 by arch             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,10 @@ EXTRA = -Wall -Wextra -Werror -I Include -std=c++98
 
 SRC = src/main.cpp \
 	src/Animal.cpp \
+	src/Brain.cpp \
 	src/Cat.cpp \
-	src/Dog.cpp \
-	src/WrongAnimal.cpp \
-	src/WrongCat.cpp
+	src/Dog.cpp
+	
 OBJ = $(SRC:.cpp=.o)
 TEST_OBJ = $(SRC:.cpp=.test.o)
 
@@ -50,5 +50,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re test
-
-
