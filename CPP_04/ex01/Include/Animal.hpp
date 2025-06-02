@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 15:58:26 by arch              #+#    #+#             */
-/*   Updated: 2025/05/30 17:41:41 by arch             ###   ########.fr       */
+/*   Updated: 2025/06/01 12:32:37 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Animal {
 		Animal (const Animal& src);
 		Animal& operator= (const Animal& src);
 		virtual ~Animal (void);
-
+		
 		std::string getType(void)const;
 		virtual void makeSound(void)const;
 		

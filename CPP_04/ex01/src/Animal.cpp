@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:02:53 by arch              #+#    #+#             */
-/*   Updated: 2025/05/30 17:51:44 by arch             ###   ########.fr       */
+/*   Updated: 2025/06/02 20:11:48 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ Animal::Animal (const Animal& src) {
 }
 
 Animal &Animal::operator= (const Animal& src) {
-	this->_type = src._type;
+	if (this != &src) {
+		this->_type = src._type;
+	}
 	std::cout << "Animal copy-assigned" << std::endl;
 	return (*this);
 }

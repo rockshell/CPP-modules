@@ -6,7 +6,7 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:09:08 by arch              #+#    #+#             */
-/*   Updated: 2025/05/30 18:19:58 by arch             ###   ########.fr       */
+/*   Updated: 2025/06/02 19:20:43 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ Brain::Brain (const Brain& src) {
 };
 
 Brain &Brain::operator= (const Brain& src) {
-	for (int i = 0; i < 100; i++)
-		this->ideas[i] = src.ideas[i];
+	if (this != &src) {
+		for (int i = 0; i < 100; i++)
+			this->ideas[i] = src.ideas[i];
+	}
 	std::cout << "Brain stole other brain's ideas. Copy-assignment for an object of Brain class called." << std::endl;
 	return (*this);
 }

@@ -6,12 +6,13 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 17:43:43 by arch              #+#    #+#             */
-/*   Updated: 2025/05/30 18:23:53 by arch             ###   ########.fr       */
+/*   Updated: 2025/06/02 20:11:47 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+// #include <cstdlib>
 #include <iostream>
 #include <string>
 #include "Animal.hpp"
@@ -22,7 +23,10 @@ class Dog: public Animal {
 		Dog (void);
 		Dog (const Dog& src);
 		Dog& operator= (const Dog& src);
-		~Dog (void);
+		virtual ~Dog (void);
 		
 		void makeSound(void)const;
+		void readTheMind(void)const;
+	private:
+		Brain* _brain;
 };
