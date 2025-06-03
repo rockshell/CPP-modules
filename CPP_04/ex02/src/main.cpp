@@ -6,21 +6,21 @@
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:13:22 by arch              #+#    #+#             */
-/*   Updated: 2025/06/03 13:36:24 by arch             ###   ########.fr       */
+/*   Updated: 2025/06/03 13:48:01 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+// #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-void	testingAnimalClass() {
-	std::cout << "====================\nAnimal class testing step\n====================" << std::endl;
-	const Animal* meta = new Animal();
-	std::cout << "Meta should produce some generic animal sounds" << std::endl;
-	meta->makeSound();
-	delete (meta);
-};
+// void	testingAnimalClass() {
+// 	std::cout << "====================\nAnimal class testing step\n====================" << std::endl;
+// 	const Animal* meta = new Animal();
+// 	std::cout << "Meta should produce some generic animal sounds" << std::endl;
+// 	meta->makeSound();
+// 	delete (meta);
+// };
 
 void	testingCatClass() {
 	std::cout << "====================\nCat class testing step\n====================" << std::endl;
@@ -84,7 +84,7 @@ void	testingAnArray() {
 }
 
 int main() {
-	testingAnimalClass();
+	// testingAnimalClass();
 	testingCatClass();
 	testingDogClass();
 	testingBrainCopies();

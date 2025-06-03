@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 17:43:43 by arch              #+#    #+#             */
-/*   Updated: 2025/06/03 13:26:02 by arch             ###   ########.fr       */
+/*   Created: 2025/05/20 15:58:26 by arch              #+#    #+#             */
+/*   Updated: 2025/06/03 13:46:08 by arch             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Dog: public Animal {
+class Animal {
 	public:
-		Dog (void);
-		Dog (const Dog& src);
-		Dog& operator= (const Dog& src);
-		virtual ~Dog (void);
+		Animal (void);
+		Animal (const Animal& src);
+		Animal& operator= (const Animal& src);
+		virtual ~Animal (void);
 		
-		void makeSound(void)const;
-		void readTheMind(void)const;
-	private:
-		Brain* _brain;
+		std::string getType(void)const;
+		virtual void makeSound(void)const = 0;
+		
+	protected:
+		std::string _type;
 };
