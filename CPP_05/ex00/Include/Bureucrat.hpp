@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureucrat.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arch <arch@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: akulikov <akulikov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 16:27:35 by arch              #+#    #+#             */
-/*   Updated: 2025/07/28 11:47:03 by arch             ###   ########.fr       */
+/*   Updated: 2025/07/28 15:18:12 by akulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,13 @@ class Bureucrat {
 
 
 class GradeTooHighException : public std::exception {
-	const 
-} 
-Bureaucrat::GradeTooLowException
+	const char* what() const throw() {
+		return ("Grade can't be higher than 1");
+	}
+};
+
+class GradeTooLowException : public std::exception {
+	const char* what() const throw() {
+		return ("Grade can't be lower than 150");
+	}
+};
